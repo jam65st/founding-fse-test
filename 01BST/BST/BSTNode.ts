@@ -6,7 +6,7 @@
  */
 class BSTNode {
 	private _key: number;
-	private _value: any;
+	private readonly _value: any;
 	
 	// edges
 	private _left: BSTNode | null;
@@ -16,10 +16,35 @@ class BSTNode {
 		this._key   = key;
 		this._value = value;
 		this._left  = this._right = null;
+		// this.print();
 	}
 	
 	swap(){
 		[ this._left, this._right ] = [ this._right, this._left ];
+	}
+	
+	print(){ // for pretesting purposes
+		type Node = {
+			key: number,
+			value: any,
+			left: BSTNode | null,
+			right: BSTNode | null,
+			isLeaf: boolean,
+			result: any
+		}
+		let tmp: Node = {
+			key: this._key,
+			value: this._value,
+			left: this._left,
+			right: this._right,
+			isLeaf: this.isLeaf,
+			result: this.node
+		}
+		console.log( 'printing BSTNode' )
+		Object.entries( tmp )
+		      .forEach(
+							( [ key, value ] ) => console.log( `|-[ ${ key.length === 3 ? '   ' : key.length === 4 ? '  ' : key.length === 5 ? ' ' : '' }${ key } ]\t:\t${ value }` )
+		      );
 	}
 	
 	public set left( left: BSTNode | null ){ this._left = left; }
@@ -29,6 +54,8 @@ class BSTNode {
 	public set right( right: BSTNode | null ){ this._right = right }
 	
 	public get right(): BSTNode | null{ return this._right; }
+	
+	public get key(): number { return this._key }
 	
 	public get node(): BSTNode | null{ return this._value }
 	
