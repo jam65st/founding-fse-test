@@ -1,13 +1,30 @@
 import BSTNode from "./BSTNode";
 
+/**
+ * # BST Binary Search Tree
+ * Its a data structure like a LinkedList, but based in nodes.
+ * Each node is a container that stores two edges or connections:
+ * lower or higher or left and right;
+ * It's his binary nature or hence binary.
+ *
+ * One tree starts with a root node and each tree has a level quantity
+ * (0 at start). A node must have one, two, or none child (leaf).
+ * Each tree has a number of edges from root to the lowest level. (height)
+ * A perfect tree has the same ammount of edges at every level,
+ * but this isn't common.
+ *
+ * @author Jaime A. Mendez <jam65st@gmail.com>
+ */
 class BST {
-	private _root: BSTNode | null = null; // root node
+	// Root node
+	private _root: BSTNode | null = null;
 	// edges
 	// levels
+	// leaf
+	// height of the tree
+	// perfect tree
 	
-	constructor(){
-		console.log( 'Init BST' );
-	}
+	constructor(){ console.log( 'Init BST' ); }
 	
 	/**
 	 * root
@@ -24,34 +41,62 @@ class BST {
 	 * @param {number} node_key
 	 * @returns {any}
 	 */
-	public search( node_key: number ): any{ return 'temp' }
-	
-	insert( value: { key:number, value: any } ): void {
-		let dummy:BSTNode | null = this._root;
-		this.insertNode( dummy, value );
+	public search( node_key: number ): any{
+		let dummy: BSTNode | null    = this._root;
+		const result: BSTNode | null = this.findNodeInTree( dummy, node_key );
+		return result !== null ? result.value : result;
 	}
+	
+	/**
+	 *
+	 *
+	 * @param {BSTNode | null} NodeInTree
+	 * @param {number} valueToSearch
+	 * @returns {BSTNode | null}
+	 * @private
+	 */
+	private findNodeInTree( NodeInTree: BSTNode | null, valueToSearch: number ): BSTNode | null{
+		return ( !NodeInTree ) ?
+		       NodeInTree :
+		       ( valueToSearch < NodeInTree.key ) ?
+		       this.findNodeInTree( NodeInTree.left, valueToSearch ) :
+		       ( valueToSearch > NodeInTree.key ) ?
+		       this.findNodeInTree( NodeInTree.right, valueToSearch ) :
+		       NodeInTree;
+	}
+	
 	/**
 	 * Insert a node, given as input a (key, value) pair
-	 * @param node {BSTNode}
-	 * @param item { key: number, value: any }
+	 * @param {{key: number, value: any}} value
 	 */
-	private insertNode( node: BSTNode | null, item: { key: number, value: any } ):BSTNode | void {
-		console.log( '- insert', item )
+	insert( value: { key: number, value: any } ): void{
+		let dummy: BSTNode | null = this._root;
+		this.insertNode( dummy, value );
+	}
+	
+	/**
+	 * Insert a new node in the tree
+	 *
+	 * @param nodeOfTree {BSTNode}
+	 * @param newNodeValue { key: number, value: any }
+	 */
+	private insertNode( nodeOfTree: BSTNode | null, newNodeValue: { key: number, value: any } ): BSTNode | void{
+		console.log( '- insert', newNodeValue )
 		
-		// If the tree is empty, assign the new node to root
-		if (!node) this._root = new BSTNode( item.key, item.value );
+		// If the tree is empty, assign the new nodeOfTree to root
+		if ( !nodeOfTree ) this._root = new BSTNode( newNodeValue.key, newNodeValue.value );
 		else {
-			// If the key of the item < key of the current node
-			if ( item.key <= node.key ){
-				// If we reached a leaf node, we insert
-				if ( !node.left ) node.left = new BSTNode( item.key, item.value );
+			// If the key of the newNodeValue < key of the current nodeOfTree
+			if ( newNodeValue.key <= nodeOfTree.key ){
+				// If we reached a leaf nodeOfTree, we insert
+				if ( !nodeOfTree.left ) nodeOfTree.left = new BSTNode( newNodeValue.key, newNodeValue.value );
 				// Else, keep looking
-				else return this.insertNode( node.left, item );
+				else return this.insertNode( nodeOfTree.left, newNodeValue );
 			} else {
-				// If we reached a leaf node, we insert
-				if ( !node.right ) node.right = new BSTNode( item.key, item.value );
+				// If we reached a leaf nodeOfTree, we insert
+				if ( !nodeOfTree.right ) nodeOfTree.right = new BSTNode( newNodeValue.key, newNodeValue.value );
 				// Else, keep looking
-				else return this.insertNode( node.right, item );
+				else return this.insertNode( nodeOfTree.right, newNodeValue );
 			}
 		}
 	}

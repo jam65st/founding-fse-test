@@ -15,6 +15,7 @@ class BSTNode {
 	constructor( key: number, value: any ){
 		this._key   = key;
 		this._value = value;
+		// set edges
 		this._left  = this._right = null;
 		// this.print();
 	}
@@ -38,7 +39,7 @@ class BSTNode {
 			left: this._left,
 			right: this._right,
 			isLeaf: this.isLeaf,
-			result: this.node
+			result: this.value
 		}
 		console.log( 'printing BSTNode' )
 		Object.entries( tmp )
@@ -57,7 +58,7 @@ class BSTNode {
 	
 	public get key(): number { return this._key }
 	
-	public get node(): BSTNode | null{ return this._value }
+	public get value(): BSTNode | null{ return this._value }
 	
 	public get isLeaf(): boolean{ return this._left === null && this._right === null }
 }
