@@ -44,7 +44,7 @@ class BSTNode {
 		console.log( 'printing BSTNode' )
 		Object.entries( tmp )
 		      .forEach(
-							( [ key, value ] ) => console.log( `|-[ ${ key.length === 3 ? '   ' : key.length === 4 ? '  ' : key.length === 5 ? ' ' : '' }${ key } ]\t:\t${ value }` )
+				      ( [ key, value ] ) => console.log( `|-[ ${ key.length === 3 ? '   ' : key.length === 4 ? '  ' : key.length === 5 ? ' ' : '' }${ key } ]\t:\t${ value }` )
 		      );
 	}
 	
@@ -56,11 +56,25 @@ class BSTNode {
 	
 	public get right(): BSTNode | null{ return this._right; }
 	
-	public get key(): number { return this._key }
+	public get key(): number{ return this._key }
 	
 	public get value(): BSTNode | null{ return this._value }
 	
 	public get isLeaf(): boolean{ return this._left === null && this._right === null }
+	
+	public get hasLeftChildOnly(): boolean{ return this._left !== null && this._right === null }
+	
+	public get hasRightChildOnly(): boolean{ return this._left === null && this._right !== null }
+	
+	public get hasChildren(): boolean{ return this._left !== null && this._right !== null }
+	
+	public mostLeft( node: BSTNode | null ): BSTNode | null{
+		return ( node && !node.left ) ?
+		          this :
+		       ( node && !node.left ) ?
+		          this.mostLeft( node.left ) :
+		          null;
+	}
 }
 
 export default BSTNode;

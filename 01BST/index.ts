@@ -1,4 +1,4 @@
-import BSTNode from "./BST/BSTNode";
+// import BSTNode from "./BST/BSTNode";
 import BST from "./BST/BST";
 
 //const initial_node = new BSTNode( 93, 'hello' );
@@ -11,7 +11,7 @@ import BST from "./BST/BST";
 	console.log( 'result', initial_node.node )
 */
 
-const alphabet: Array<string> = 'abcdefghijklmnopqrstuvwxyz'.split('');
+// const alphabet: Array<string> = 'abcdefghijklmnopqrstuvwxyz'.split('');
 
 let tree_0 = new BST(),
     tree_1 = new BST();
@@ -52,4 +52,5 @@ for( let i=0; i <list.length; i++ ) expected( list[i].key, list[i].value )
 console.log( 'reviewing expected 2' )
 for( let i=0; i <list.length; i++ ) expected( list[i].key, list[ i < list.length - 1 ? i + 1 : 0 ].value )
 
-
+console.log('delete ---------')
+tree_0.delete( 44 )
