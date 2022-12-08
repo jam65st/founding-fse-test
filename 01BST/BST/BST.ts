@@ -13,10 +13,18 @@ import BSTNode from "./BSTNode";
  * A perfect tree has the same ammount of edges at every level,
  * but this isn't common.
  *
- * @author Jaime A. Mendez <jam65st@gmail.com>
+ * @author: Jaime A. Mendez <jam65st@gmail.com>
+ * @date: 2022-12-08
  */
 class BST {
-	// Root node
+	// PRIVATE PROPERTIES
+	/**
+	 * **_root**
+	 * Default root node of the BST
+	 *
+	 * @type {BSTNode | null}
+	 * @private
+	 */
 	private _root: BSTNode | null = null;
 	// edges
 	// levels
@@ -24,20 +32,25 @@ class BST {
 	// height of the tree
 	// perfect tree
 	
+	// CONSTRUCTOR
 	constructor(){ console.log( 'Init BST' ); }
 	
+	// GETTERS & SETTERS
 	/**
-	 * root
+	 * ## root (property)
 	 *
-	 * returns BST Root Node
+	 * (ReadOnly) Returns BST Root Node
 	 *
 	 * @returns {BSTNode | null}
 	 */
 	public get root(): BSTNode | null{ return this._root }
 	
+	// METHODS
 	/**
+	 * ## search (function)
 	 * Search for a node, given as input a key, and output the value found on the
 	 * searched node (or Null if such a node is not found)
+	 *
 	 * @param {number} node_key
 	 * @returns {any}
 	 */
@@ -47,7 +60,27 @@ class BST {
 	}
 	
 	/**
+	 * ## findSuccessor (function)
+	 * Given a reference to a node n in the tree, find the successor node,
+	 * i.e., the node whose key is the smallest key greater than the key
+	 * in node n (assuming all keys in the tree have distinct values)
 	 *
+	 * @param {number} nodeReferenceKey
+	 * @param {boolean} strict  Default: false  If no strict and no right edge
+	 * returns the Node without successor else returns null;
+	 */
+	public findSuccessor( nodeReferenceKey: number, strict:boolean = false ): BSTNode | null{
+		const result: BSTNode | null = this.findNodeInTree( this._root, nodeReferenceKey );
+		return result !== null && result.right !== null ?
+		        result.right :
+		       result !== null && result.right === null && !strict ?
+			       result :
+			       null;
+	}
+	
+	/**
+	 * **findNodeInTree** (function)
+	 * Used by **search** and **findSuccessor** methods
 	 *
 	 * @param {BSTNode | null} NodeInTree
 	 * @param {number} valueToSearch
@@ -65,20 +98,22 @@ class BST {
 	}
 	
 	/**
+	 * ## insert (function)
 	 * Insert a node, given as input a (key, value) pair
+	 *
 	 * @param {{key: number, value: any}} value
 	 */
-	insert( value: { key: number, value: any } ): void{ this.insertNode( this._root, value ); }
+	public insert( value: { key: number, value: any } ): void{ this.insertNodeInTree( this._root, value ); }
 	
 	/**
-	 * Insert a new node in the tree
+	 * **insertNodeInTree** (function)
+	 * Insert a new node in the tree.
+	 * Used By **insert** method
 	 *
 	 * @param nodeOfTree {BSTNode}
 	 * @param newNodeValue { key: number, value: any }
 	 */
-	private insertNode( nodeOfTree: BSTNode | null, newNodeValue: { key: number, value: any } ): BSTNode | void{
-		console.log( '- insert', newNodeValue )
-		
+	private insertNodeInTree( nodeOfTree: BSTNode | null, newNodeValue: { key: number, value: any } ): BSTNode | void{
 		// If the tree is empty, assign the new nodeOfTree to root
 		if ( !nodeOfTree ) this._root = new BSTNode( newNodeValue.key, newNodeValue.value );
 		else {
@@ -87,24 +122,28 @@ class BST {
 				// If we reached a leaf nodeOfTree, we insert
 				if ( !nodeOfTree.left ) nodeOfTree.left = new BSTNode( newNodeValue.key, newNodeValue.value );
 				// Else, keep looking
-				else return this.insertNode( nodeOfTree.left, newNodeValue );
+				else return this.insertNodeInTree( nodeOfTree.left, newNodeValue );
 			} else {
 				// If we reached a leaf nodeOfTree, we insert
 				if ( !nodeOfTree.right ) nodeOfTree.right = new BSTNode( newNodeValue.key, newNodeValue.value );
 				// Else, keep looking
-				else return this.insertNode( nodeOfTree.right, newNodeValue );
+				else return this.insertNodeInTree( nodeOfTree.right, newNodeValue );
 			}
 		}
 	}
 	
 	/**
+	 * ## delete (function)
 	 * Delete all nodes having a certain key, given as input a key
+	 *
 	 * @param {number} node_key
 	 */
 	public delete( node_key: number ): void{ this.deleteNodeInTree( this._root, this._root, node_key ) }
 	
 	/**
+	 * **deleteNodeInTree** (function)
 	 * Remove a node from tree following their path.
+	 * Used by **delete** method
 	 *
 	 * @param {BSTNode | null} parentNode
 	 * @param {BSTNode | null} nodeOfTree
@@ -154,6 +193,7 @@ class BST {
 	}
 	
 	/**
+	 * ## print (function)
 	 * Print all keys in the tree in sorted order
 	 *
 	 * @param {string} type: key | value
@@ -165,8 +205,6 @@ class BST {
 		// If root is not empty start to build the sorted list
 		return ( type === 'key' ) ? this._root.printNodeKey() : this._root.printNodeValue();
 	}
-	
-	public given( node_key: number ){}
 }
 
 export default BST;

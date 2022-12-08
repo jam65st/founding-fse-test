@@ -1,12 +1,16 @@
 /**
- * BST Node
+ * # BST Node
+ * It is any element inside a BST Binary Search Tree
  *
  * @param: key (int): identifier
  * @param: value (any): the kind of content to storage
+ * @author: Jaime A. Mendez <jam65st@gmail.com>
+ * @date: 2022-12-08
  */
 class BSTNode {
+	// PRIVATE PROPERTIES
 	/**
-	 * _key
+	 * **_key**
 	 * Node identifier
 	 *
 	 * @type {number}
@@ -15,7 +19,7 @@ class BSTNode {
 	private readonly _key: number;
 	
 	/**
-	 * _value
+	 * **_value**
 	 * Node content
 	 *
 	 * @type {any}
@@ -24,9 +28,8 @@ class BSTNode {
 	private readonly _value: any;
 	
 	// EDGES
-	
 	/**
-	 * _left (edge)
+	 * **_left** (edge)
 	 * Lower value
 	 *
 	 * @type {BSTNode | null}
@@ -35,7 +38,7 @@ class BSTNode {
 	private _left: BSTNode | null;
 	
 	/**
-	 * _right (edge)
+	 * **_right** (edge)
 	 * Higher value
 	 *
 	 * @type {BSTNode | null}
@@ -43,12 +46,7 @@ class BSTNode {
 	 */
 	private _right: BSTNode | null;
 	
-	/**
-	 * BST Node
-	 *
-	 * @param: key (int): identifier
-	 * @param: value (any): the kind of content to storage
-	 */
+	// CONSTRUCTOR
 	constructor( key: number, value: any ){
 		this._key   = key;
 		this._value = value;
@@ -59,8 +57,8 @@ class BSTNode {
 	
 	// GETTERS & SETTERS
 	/**
-	 * left (property)
-	 * allow to set or get the lower edge of this node
+	 * ## left (property)
+	 * Allow to set or get the lower edge of this node
 	 *
 	 * @param {BSTNode | null} left
 	 */
@@ -69,8 +67,8 @@ class BSTNode {
 	public get left(): BSTNode | null{ return this._left; }
 	
 	/**
-	 * left (property)
-	 * allow to set or get the higher edge of this node
+	 * ## right (property)
+	 * Allow to set or get the higher edge of this node
 	 *
 	 * @param {BSTNode | null} right
 	 */
@@ -79,48 +77,48 @@ class BSTNode {
 	public get right(): BSTNode | null{ return this._right; }
 	
 	/**
-	 * key (property)
-	 * reports or allow to get the current identifier (key) of this node
+	 * ## key (property)
+	 * (ReadOnly) Reports or allow to get the current identifier (key) of this node.
 	 *
 	 * @returns {number}
 	 */
 	public get key(): number{ return this._key }
 	
 	/**
-	 * value (property)
-	 * reports or allow to get the current content (value) of this node
+	 * ## value (property)
+	 * (ReadOnly) Reports or allow to get the current content (value) of this node.
 	 *
 	 * @returns {BSTNode | null}
 	 */
 	public get value(): BSTNode | null{ return this._value }
 	
 	/**
-	 * isLeaf (property)
-	 * reports or allow to know if this node doesn't have any edge or child
+	 * ## isLeaf (property)
+	 * (ReadOnly) Reports or allow to know if this node doesn't have any edge or child
 	 *
 	 * @returns {boolean}
 	 */
 	public get isLeaf(): boolean{ return this._left === null && this._right === null }
 	
 	/**
-	 * hasLeftChildOnly (property)
-	 * reports or allow to know if this node only have a lower edge or left child
+	 * ## hasLeftChildOnly (property)
+	 * (ReadOnly) Reports or allow to know if this node only have a lower edge or left child
 	 *
 	 * @returns {boolean}
 	 */
 	public get hasLeftChildOnly(): boolean{ return this._left !== null && this._right === null }
 	
 	/**
-	 * hasRightChildOnly (property)
-	 * reports or allow to know if this node only have a higher edge or right child
+	 * ## hasRightChildOnly (property)
+	 * (ReadOnly) Reports or allow to know if this node only have a higher edge or right child
 	 *
 	 * @returns {boolean}
 	 */
 	public get hasRightChildOnly(): boolean{ return this._left === null && this._right !== null }
 	
 	/**
-	 * hasChildren (property)
-	 * reports or allow to know if this node have both edges or children (lower | left, higher | right)
+	 * ## hasChildren (property)
+	 * (ReadOnly) Reports or allow to know if this node have both edges or children (lower | left, higher | right)
 	 *
 	 * @returns {boolean}
 	 */
@@ -128,7 +126,7 @@ class BSTNode {
 	
 	// METHODS
 	/**
-	 * mostLeft (function)
+	 * ## mostLeft (function)
 	 * This method allow to find the most left item.
 	 * It method is used by BST.delete || BST deleteNodeInTree
 	 *
@@ -144,7 +142,7 @@ class BSTNode {
 	}
 	
 	/**
-	 * printNodeKey (function)
+	 * ## printNodeKey (function)
 	 * This method explores the node and their children (edges) to find
 	 * to return the ordered list of all keys (identifiers) in the BST
 	 *
@@ -162,7 +160,7 @@ class BSTNode {
 	}
 	
 	/**
-	 * printNodeKey (function)
+	 * ## printNodeKey (function)
 	 * This method explores the node and their children (edges) to find
 	 * to return the ordered list of all values (contents) in the BST
 	 *
@@ -178,6 +176,9 @@ class BSTNode {
 		
 		return result;
 	}
+	
+	// HELPER
+	print(){ console.log( 'print', this !== null ? this : 'none' ) }
 }
 
 export default BSTNode;
