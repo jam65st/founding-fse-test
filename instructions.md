@@ -16,9 +16,7 @@ Design a data structure for a binary search tree where each node has a key and a
   in the tree have distinct values)
 
 ### 2 Represent HTML
-Given an HTML document, write code to represent the contents of the HTML document
-   (seen as a tree) in the following data structure. This syntax is Python. Modify the syntax
-   appropriately if you’d like to work with a different programming language.
+Given an HTML document, write code to represent the contents of the HTML document (seen as a tree) in the following data structure. This syntax is Python. Modify the syntax appropriately if you’d like to work with a different programming language.
 <pre><small>class Node:
     tagName: Optional[str] # the name of the HTML tag represented in this node
     text: Optional[str] # the text within this HTML tag
