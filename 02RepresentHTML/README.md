@@ -24,6 +24,7 @@ tag
 - **Notes:**
   1- **nato.json** has been built in a tree structure
   2- Javascript interacts directly with DOM, it maintain their relationship with parent nodes
+  3- ./js/**htmlRepresent.js** contains the requested feature
 - HTML Content:
 
 <pre><code lang="html"><section class="hero">
