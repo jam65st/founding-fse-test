@@ -53,4 +53,9 @@ console.log( 'reviewing expected 2' )
 for( let i=0; i <list.length; i++ ) expected( list[i].key, list[ i < list.length - 1 ? i + 1 : 0 ].value )
 
 console.log('delete ---------')
-tree_0.delete( 44 )
+// tree_0.delete( 44 )
+
+console.log( 'print ----------')
+console.log( 'print 0', tree_0.print() );
+console.log( 'print 0', tree_0.print('values') );
+console.log( 'print 1', tree_1.print() );

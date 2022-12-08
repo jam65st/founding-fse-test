@@ -155,11 +155,15 @@ class BST {
 	
 	/**
 	 * Print all keys in the tree in sorted order
+	 *
+	 * @param {string} type: key | value
 	 * @returns {any[]}
 	 */
-	public print(): any[]{
+	public print( type: string = 'key' ): any[]{
+		// If root is empty return an empty List
 		if ( !this._root ) return [];
-		return [ 0, 1, 2, 3 ]
+		// If root is not empty start to build the sorted list
+		return ( type === 'key' ) ? this._root.printNodeKey() : this._root.printNodeValue();
 	}
 	
 	public given( node_key: number ){}
