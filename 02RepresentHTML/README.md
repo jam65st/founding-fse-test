@@ -1,5 +1,8 @@
 # Instructions for Represent HTML
-Given an HTML document, write code to represent the contents of the HTML document (seen as a tree) in the following data structure. This syntax is Python. Modify the syntax appropriately if you’d like to work with a different programming language.
+
+Given an HTML document, write code to represent the contents of the HTML document (seen as a tree) in the following data
+structure. This syntax is Python. Modify the syntax appropriately if you’d like to work with a different programming
+language.
 <pre><small>class Node:
     tagName: Optional[str] # the name of the HTML tag represented in this node
     text: Optional[str] # the text within this HTML tag
@@ -10,17 +13,20 @@ tag
 </small></pre>
 
 # Use case:
-- website: https://www.nato.int/
-- section: hero
-- versions: 
-  -[X] nato-data.json // Complex structure in Javascript Object Notations (JSON)
-    - HTML comments were ignored
-  -[X] nato.json // Complex structure simplified in Javascript Object Notations (JSON)
-    - Empty elements were removed
-  - 
-- content:
-<pre><code lang="html">
-<section class="hero">
+
+- Website: https://www.nato.int/
+- Section: hero
+- Versions:
+	-[X] **nato-data.json** // Complex structure in Javascript Object Notations (JSON)
+		- HTML comments were ignored
+	-[X] **nato.json** // Complex structure simplified in Javascript Object Notations (JSON)
+		- Empty elements were removed from **nato-data.json**
+- **Notes:**
+  1- **nato.json** has been built in a tree structure
+  2- Javascript interacts directly with DOM, it maintain their relationship with parent nodes
+- HTML Content:
+
+<pre><code lang="html"><section class="hero">
   <div class="inner">
 	  <h1>Newsroom</h1>
 	  <!-- https://www.nato.int/cps/en/natohq/news_209981.htm -->
@@ -55,26 +61,27 @@ tag
 			</div><!-- /.teaser -->
       <!-- https://www.nato.int/cps/en/natohq/news_209931.htm -->
 			<div class="teaser colspan-m-6 colspan-s-12">
-            <div class="box-media"><a title="Secretary General Stoltenberg praises German support to Ukraine, key role in NATO" href="https://www.nato.int/cps/en/natohq/news_209931.htm">
-                <img class="lazy" data-original="https://www.nato.int/nato_static_fl2014/assets/pictures/images_mfu/2022/12/01a-trip-sg-berlin/221201a-040_rdax_375x250s.jpg" alt="Secretary General Stoltenberg praises German support to Ukraine, key role in NATO" height="120" src="https://www.nato.int/nato_static_fl2014/assets/pictures/images_mfu/2022/12/01a-trip-sg-berlin/221201a-040_rdax_375x250s.jpg" style="display: inline;">            
-            </a></div><!-- /.box-media -->
-            <div class="teaser-content">
-                <p><a title="Secretary General Stoltenberg praises German support to Ukraine, key role in NATO" href="https://www.nato.int/cps/en/natohq/news_209931.htm">Secretary General Stoltenberg praises German support to Ukraine, key role in NATO</a></p>
-            </div><!-- /.teaser-content -->
-        </div><!-- /.teaser -->
-	    </div><!-- /.teaser-wrapper -->
-			<ul class="list list-bordered">
-				<!-- https://www.nato.int/cps/en/natohq/news_209891.htm -->
-				<li><a title="NATO Secretary General thanks Germany for contributions at critical time " href="https://www.nato.int/cps/en/natohq/news_209891.htm">NATO Secretary General thanks Germany for contributions at critical time </a></li>
-				<!-- https://www.nato.int/cps/en/natohq/news_209976.htm -->
-				<li><a title="NATO Deputy Secretary General joins prayers for Ukraine" href="https://www.nato.int/cps/en/natohq/news_209976.htm">NATO Deputy Secretary General joins prayers for Ukraine</a></li>
-				<!-- https://www.nato.int/cps/en/natohq/news_209493.htm -->
-				<li><a title="NATO Foreign Ministers end meetings in Bucharest with focus on China, more support for partners" href="https://www.nato.int/cps/en/natohq/news_209493.htm">NATO Foreign Ministers end meetings in Bucharest with focus on China, more support for partners</a></li>
-				<!-- https://www.nato.int/cps/en/natohq/news_209491.htm -->
-				<li><a title="NATO Secretary General: &quot;we will not back down&quot; in support for Ukraine" href="https://www.nato.int/cps/en/natohq/news_209491.htm">NATO Secretary General: "we will not back down" in support for Ukraine</a></li>
-				<li><a href="https://www.nato.int/cps/en/natohq/news.htm">ALL NEWS <span class="icon icon-arrow_link_double"></span></a></li>
-			</ul><!-- /.list-bordered -->   
-    </div><!-- /.inner -->
-</section>
-</code></pre>
+        <div class="box-media">
+          <a title="Secretary General Stoltenberg praises German support to Ukraine, key role in NATO" href="https://www.nato.int/cps/en/natohq/news_209931.htm">
+            <img class="lazy" data-original="https://www.nato.int/nato_static_fl2014/assets/pictures/images_mfu/2022/12/01a-trip-sg-berlin/221201a-040_rdax_375x250s.jpg" alt="Secretary General Stoltenberg praises German support to Ukraine, key role in NATO" height="120" src="https://www.nato.int/nato_static_fl2014/assets/pictures/images_mfu/2022/12/01a-trip-sg-berlin/221201a-040_rdax_375x250s.jpg" style="display: inline;">            
+          </a>
+        </div><!-- /.box-media -->
+        <div class="teaser-content">
+          <p><a title="Secretary General Stoltenberg praises German support to Ukraine, key role in NATO" href="https://www.nato.int/cps/en/natohq/news_209931.htm">Secretary General Stoltenberg praises German support to Ukraine, key role in NATO</a></p>
+        </div><!-- /.teaser-content -->
+      </div><!-- /.teaser -->
+    </div><!-- /.teaser-wrapper -->
+    <ul class="list list-bordered">
+      <!-- https://www.nato.int/cps/en/natohq/news_209891.htm -->
+      <li><a title="NATO Secretary General thanks Germany for contributions at critical time " href="https://www.nato.int/cps/en/natohq/news_209891.htm">NATO Secretary General thanks Germany for contributions at critical time </a></li>
+      <!-- https://www.nato.int/cps/en/natohq/news_209976.htm -->
+      <li><a title="NATO Deputy Secretary General joins prayers for Ukraine" href="https://www.nato.int/cps/en/natohq/news_209976.htm">NATO Deputy Secretary General joins prayers for Ukraine</a></li>
+      <!-- https://www.nato.int/cps/en/natohq/news_209493.htm -->
+      <li><a title="NATO Foreign Ministers end meetings in Bucharest with focus on China, more support for partners" href="https://www.nato.int/cps/en/natohq/news_209493.htm">NATO Foreign Ministers end meetings in Bucharest with focus on China, more support for partners</a></li>
+      <!-- https://www.nato.int/cps/en/natohq/news_209491.htm -->
+      <li><a title="NATO Secretary General: &quot;we will not back down&quot; in support for Ukraine" href="https://www.nato.int/cps/en/natohq/news_209491.htm">NATO Secretary General: "we will not back down" in support for Ukraine</a></li>
+      <li><a href="https://www.nato.int/cps/en/natohq/news.htm">ALL NEWS <span class="icon icon-arrow_link_double"></span></a></li>
+    </ul><!-- /.list-bordered -->   
+  </div><!-- /.inner -->
+</section></code></pre>
 
