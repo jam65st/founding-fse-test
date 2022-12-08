@@ -219,136 +219,320 @@
 																	"children":     [
 																		{
 																			"classNode": {
-																				"tagName":      "ul",
+																				"tagName":      "div",
 																				"text":         "",
 																				"children":     [
 																					{
 																						"classNode": {
-																							"tagName":      "li",
+																							"tagName":      "div",
 																							"text":         "",
 																							"children":     [
 																								{
 																									"classNode": {
 																										"tagName":      "a",
-																										"text":         "NATO Secretary General thanks Germany for contributions at critical time",
-																										"children":     [],
-																										"attributeMap": [
-																											{
-																												"title": "NATO Secretary General thanks Germany for contributions at critical time "
-																											},
-																											{"href": "https://www.nato.int/cps/en/natohq/news_209891.htm"}
-																										]
-																									}
-																								}
-																							],
-																							"attributeMap": []
-																						}
-																					},
-																					{
-																						"classNode": {
-																							"tagName":      "li",
-																							"text":         "",
-																							"children":     [
-																								{
-																									"classNode": {
-																										"tagName":      "a",
-																										"text":         "NATO Deputy Secretary General joins prayers for Ukraine",
-																										"children":     [],
-																										"attributeMap": [
-																											{
-																												"title": "NATO Deputy Secretary General joins prayers for Ukraine"
-																											},
-																											{"href": "https://www.nato.int/cps/en/natohq/news_209976.htm"}
-																										]
-																									}
-																								}
-																							],
-																							"attributeMap": []
-																						}
-																					},
-																					{
-																						"classNode": {
-																							"tagName":      "li",
-																							"text":         "",
-																							"children":     [
-																								{
-																									"classNode": {
-																										"tagName":      "a",
-																										"text":         "NATO Foreign Ministers end meetings in Bucharest with focus on China, more support for partners",
-																										"children":     [],
-																										"attributeMap": [
-																											{
-																												"title": "NATO Foreign Ministers end meetings in Bucharest with focus on China, more support for partners"
-																											},
-																											{"href": "https://www.nato.int/cps/en/natohq/news_209493.htm"}
-																										]
-																									}
-																								}
-																							],
-																							"attributeMap": []
-																						}
-																					},
-																					{
-																						"classNode": {
-																							"tagName":      "li",
-																							"text":         "",
-																							"children":     [
-																								{
-																									"classNode": {
-																										"tagName":      "a",
-																										"text":         "NATO Secretary General: \"we will not back down\" in support for Ukraine",
-																										"children":     [],
-																										"attributeMap": [
-																											{
-																												"title": "NATO Secretary General: &quot;we will not back down&quot; in support for Ukraine"
-																											},
-																											{"href": "https://www.nato.int/cps/en/natohq/news_209491.htm"}
-																										]
-																									}
-																								}
-																							],
-																							"attributeMap": []
-																						}
-																					},
-																					{
-																						"classNode": {
-																							"tagName":      "li",
-																							"text":         "",
-																							"children":     [
-																								{
-																									"classNode": {
-																										"tagName":      "a",
-																										"text":         "ALL NEWS",
+																										"text":         "",
 																										"children":     [
 																											{
 																												"classNode": {
-																													"tagName":      "span",
+																													"tagName":      "img",
 																													"text":         "",
 																													"children":     [],
 																													"attributeMap": [
-																														{"class": "icon icon-arrow_link_double"}
+																														{"class": "lazy"},
+																														{
+																															"data-original": "https://www.nato.int/nato_static_fl2014/assets/pictures/images_mfu/2022/12/stock/221201-cc22-4_rdax_375x213s.jpg"
+																														},
+																														{
+																															"alt": "NATO Exercise Cyber Coalition concludes in Estonia"
+																														},
+																														{"height": "120"},
+																														{
+																															"src": "https://www.nato.int/nato_static_fl2014/assets/pictures/images_mfu/2022/12/stock/221201-cc22-4_rdax_375x213s.jpg"
+																														},
+																														{"style": "display: inline;"}
 																													]
 																												}
 																											}
 																										],
 																										"attributeMap": [
-																											{"href": "https://www.nato.int/cps/en/natohq/news.htm"}
+																											{"title": "NATO Exercise Cyber Coalition concludes in Estonia"},
+																											{
+																												"href": "https://act.nato.int/articles/exercise-cyber-coalition-2022-concludes-estonia"
+																											}
 																										]
 																									}
 																								}
 																							],
-																							"attributeMap": []
+																							"attributeMap": [
+																								{"class": "box-media"}
+																							]
+																						}
+																					},
+																					{
+																						"classNode": {
+																							"tagName":      "div",
+																							"text":         "",
+																							"children":     [
+																								{
+																									"classNode": {
+																										"tagName":      "p",
+																										"text":         "",
+																										"children":     [
+																											{
+																												"classNode": {
+																													"tagName":      "a",
+																													"text":         "NATO Exercise Cyber Coalition concludes in Estonia",
+																													"children":     [],
+																													"attributeMap": [
+																														{
+																															"title": "NATO Exercise Cyber Coalition concludes in Estonia"
+																														},
+																														{
+																															"href": "https://act.nato.int/articles/exercise-cyber-coalition-2022-concludes-estonia"
+																														}
+																													]
+																												}
+																											}
+																										],
+																										"attributeMap": []
+																									}
+																								}
+																							],
+																							"attributeMap": [
+																								{"class": "teaser-content"}
+																							]
 																						}
 																					}
 																				],
 																				"attributeMap": [
-																					{"class": "list list-bordered"}
+																					{"class": "teaser colspan-m-6 colspan-s-12"}
+																				]
+																			}
+																		},
+																		{
+																			"classNode": {
+																				"tagName":      "div",
+																				"text":         "",
+																				"children":     [
+																					{
+																						"classNode": {
+																							"tagName":      "div",
+																							"text":         "",
+																							"children":     [
+																								{
+																									"classNode": {
+																										"tagName":      "a",
+																										"text":         "",
+																										"children":     [
+																											{
+																												"classNode": {
+																													"tagName":      "img",
+																													"text":         "",
+																													"children":     [],
+																													"attributeMap": [
+																														{"class": "lazy"},
+																														{
+																															"data-original": "https://www.nato.int/nato_static_fl2014/assets/pictures/images_mfu/2022/12/01a-trip-sg-berlin/221201a-040_rdax_375x250s.jpg"
+																														},
+																														{
+																															"alt": "Secretary General Stoltenberg praises German support to Ukraine, key role in NATO"
+																														},
+																														{"height": "120"},
+																														{
+																															"src": "https://www.nato.int/nato_static_fl2014/assets/pictures/images_mfu/2022/12/01a-trip-sg-berlin/221201a-040_rdax_375x250s.jpg"
+																														},
+																														{"style": "display: inline;"}
+																													]
+																												}
+																											}
+																										],
+																										"attributeMap": [
+																											{
+																												"title": "Secretary General Stoltenberg praises German support to Ukraine, key role in NATO"
+																											},
+																											{"href": "https://www.nato.int/cps/en/natohq/news_209931.htm"}
+																										]
+																									}
+																								}
+																							],
+																							"attributeMap": [
+																								{"class": "box-media"}
+																							]
+																						}
+																					},
+																					{
+																						"classNode": {
+																							"tagName":      "div",
+																							"text":         "",
+																							"children":     [
+																								{
+																									"classNode": {
+																										"tagName":      "p",
+																										"text":         "",
+																										"children":     [
+																											{
+																												"classNode": {
+																													"tagName":      "a",
+																													"text":         "Secretary General Stoltenberg praises German support to Ukraine, key role in NATO",
+																													"children":     [],
+																													"attributeMap": [
+																														{
+																															"title": "Secretary General Stoltenberg praises German support to Ukraine, key role in NATO"
+																														},
+																														{
+																															"href": "https://www.nato.int/cps/en/natohq/news_209931.htm"
+																														}
+																													]
+																												}
+																											}
+																										],
+																										"attributeMap": []
+																									}
+																								}
+																							],
+																							"attributeMap": [
+																								{"class": "teaser-content"}
+																							]
+																						}
+																					}
+																				],
+																				"attributeMap": [
+																					{"class": "teaser colspan-m-6 colspan-s-12"}
 																				]
 																			}
 																		}
 																	],
 																	"attributeMap": [
 																		{"class": "row teaser-wrapper"}
+																	]
+																}
+															},
+															{
+																"classNode": {
+																	"tagName":      "ul",
+																	"text":         "",
+																	"children":     [
+																		{
+																			"classNode": {
+																				"tagName":      "li",
+																				"text":         "",
+																				"children":     [
+																					{
+																						"classNode": {
+																							"tagName":      "a",
+																							"text":         "NATO Secretary General thanks Germany for contributions at critical time",
+																							"children":     [],
+																							"attributeMap": [
+																								{
+																									"title": "NATO Secretary General thanks Germany for contributions at critical time "
+																								},
+																								{"href": "https://www.nato.int/cps/en/natohq/news_209891.htm"}
+																							]
+																						}
+																					}
+																				],
+																				"attributeMap": []
+																			}
+																		},
+																		{
+																			"classNode": {
+																				"tagName":      "li",
+																				"text":         "",
+																				"children":     [
+																					{
+																						"classNode": {
+																							"tagName":      "a",
+																							"text":         "NATO Deputy Secretary General joins prayers for Ukraine",
+																							"children":     [],
+																							"attributeMap": [
+																								{
+																									"title": "NATO Deputy Secretary General joins prayers for Ukraine"
+																								},
+																								{"href": "https://www.nato.int/cps/en/natohq/news_209976.htm"}
+																							]
+																						}
+																					}
+																				],
+																				"attributeMap": []
+																			}
+																		},
+																		{
+																			"classNode": {
+																				"tagName":      "li",
+																				"text":         "",
+																				"children":     [
+																					{
+																						"classNode": {
+																							"tagName":      "a",
+																							"text":         "NATO Foreign Ministers end meetings in Bucharest with focus on China, more support for partners",
+																							"children":     [],
+																							"attributeMap": [
+																								{
+																									"title": "NATO Foreign Ministers end meetings in Bucharest with focus on China, more support for partners"
+																								},
+																								{"href": "https://www.nato.int/cps/en/natohq/news_209493.htm"}
+																							]
+																						}
+																					}
+																				],
+																				"attributeMap": []
+																			}
+																		},
+																		{
+																			"classNode": {
+																				"tagName":      "li",
+																				"text":         "",
+																				"children":     [
+																					{
+																						"classNode": {
+																							"tagName":      "a",
+																							"text":         "NATO Secretary General: \"we will not back down\" in support for Ukraine",
+																							"children":     [],
+																							"attributeMap": [
+																								{
+																									"title": "NATO Secretary General: &quot;we will not back down&quot; in support for Ukraine"
+																								},
+																								{"href": "https://www.nato.int/cps/en/natohq/news_209491.htm"}
+																							]
+																						}
+																					}
+																				],
+																				"attributeMap": []
+																			}
+																		},
+																		{
+																			"classNode": {
+																				"tagName":      "li",
+																				"text":         "",
+																				"children":     [
+																					{
+																						"classNode": {
+																							"tagName":      "a",
+																							"text":         "ALL NEWS",
+																							"children":     [
+																								{
+																									"classNode": {
+																										"tagName":      "span",
+																										"text":         "",
+																										"children":     [],
+																										"attributeMap": [
+																											{"class": "icon icon-arrow_link_double"}
+																										]
+																									}
+																								}
+																							],
+																							"attributeMap": [
+																								{"href": "https://www.nato.int/cps/en/natohq/news.htm"}
+																							]
+																						}
+																					}
+																				],
+																				"attributeMap": []
+																			}
+																		}
+																	],
+																	"attributeMap": [
+																		{"class": "list list-bordered"}
 																	]
 																}
 															}
