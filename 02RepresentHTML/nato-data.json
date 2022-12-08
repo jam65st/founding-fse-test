@@ -1,0 +1,381 @@
+{
+	"html": {
+		"head": [],
+		"body": [
+			{
+				"classNode": {
+					"tagName":      "div",
+					"text":         "",
+					"children":     [
+						{
+							"classNode": {
+								"tagName":      "div",
+								"text":         "",
+								"children":     [
+									{
+										"classNode": {
+											"tagName":      "section",
+											"text":         "",
+											"children":     [
+												{
+													"classNode": {
+														"tagName":      "div",
+														"text":         "",
+														"children":     [
+															{
+																"classNode": {
+																	"tagName":      "h1",
+																	"text":         "Newsroom",
+																	"children":     [],
+																	"attributeMap": []
+																}
+															},
+															{
+																"classNode": {
+																	"tagName":      "div",
+																	"text":         "",
+																	"children":     [
+																		{
+																			"classNode": {
+																				"tagName":      "a",
+																				"text":         "",
+																				"children":     [
+																					{
+																						"classNode": {
+																							"tagName":      "img",
+																							"text":         "",
+																							"children":     [],
+																							"attributeMap": [
+																								{"class": "lazy"},
+																								{
+																									"data-original": "https://www.nato.int/nato_static_fl2014/assets/pictures/images_mfu/2022/12/stock/221207-sg-ft_rdax_775x440s.jpg"
+																								},
+																								{
+																									"alt": "NATO Secretary General: ''Russia trying to freeze Ukraine conflict''"
+																								},
+																								{"width": "643"},
+																								{
+																									"src": "https://www.nato.int/nato_static_fl2014/assets/pictures/images_mfu/2022/12/stock/221207-sg-ft_rdax_775x440s.jpg"
+																								},
+																								{"style": "display: inline;"}
+																							]
+																						}
+																					}
+																				],
+																				"attributeMap": [
+																					{
+																						"title": "NATO Secretary General: ''Russia trying to freeze Ukraine conflict''"
+																					},
+																					{"href": "https://www.nato.int/cps/en/natohq/news_209981.htm"}
+																				]
+																			}
+																		},
+																		{
+																			"classNode": {
+																				"tagName":      "div",
+																				"text":         "",
+																				"children":     [
+																					{
+																						"classNode": {
+																							"tagName":      "span",
+																							"text":         "07 Dec. 2022",
+																							"children":     [],
+																							"attributeMap": [
+																								{"class": "date date--dark"}
+																							]
+																						}
+																					},
+																					{
+																						"classNode": {
+																							"tagName":      "h1",
+																							"text":         "",
+																							"children":     [
+																								{
+																									"classNode": {
+																										"tagName":      "a",
+																										"text":         "NATO Secretary General: ''Russia trying to freeze Ukraine conflict''",
+																										"children":     [],
+																										"attributeMap": [
+																											{
+																												"title": "NATO Secretary General: ''Russia trying to freeze Ukraine conflict''"
+																											},
+																											{"href": "https://www.nato.int/cps/en/natohq/news_209981.htm"}
+																										]
+																									}
+																								}
+																							],
+																							"attributeMap": [
+																								{"class": "h-lc"}
+																							]
+																						}
+																					},
+																					{
+																						"classNode": {
+																							"tagName":      "p",
+																							"text":         "NATO Secretary General Jens Stoltenberg on Wednesday (07 December 2022) stressed the importance of continued NATO Allied support to Ukraine as it faces Russia’s war of aggression. Addressing the Financial Times’ Global Boardroom event via video link, Mr Stoltenberg said the conflict would likely enter a quieter phase over winter but that Russia is showing no sign of seeking a peaceful end to the conflict.",
+																							"children":     [],
+																							"attributeMap": []
+																						}
+																					},
+																					{
+																						"classNode": {
+																							"tagName":      "ul",
+																							"text":         "",
+																							"children":     [
+																								{
+																									"classNode": {
+																										"tagName":      "li",
+																										"text":         "",
+																										"children":     [
+																											{
+																												"classNode": {
+																													"tagName":      "a",
+																													"text":         "Audio",
+																													"children":     [
+																														{
+																															"classNode": {
+																																"tagName":      "span",
+																																"text":         "",
+																																"children":     [],
+																																"attributeMap": [
+																																	{"class": "icon icon-audio"}
+																																]
+																															}
+																														}
+																													],
+																													"attributeMap": [
+																														{
+																															"href": "https://www.nato.int/nato_static_fl2014/assets/audio/2022/12/audio/221207a.mp3"
+																														},
+																														{
+																															"title": "Interview with NATO Secretary General Jens Stoltenberg in the sixth edition of the Financial Times’s Global Boardroom event"
+																														}
+																													]
+																												}
+																											}
+																										],
+																										"attributeMap": [
+																											{"class": "col colspan-m-6 colspan-s-12"}
+																										]
+																									}
+																								},
+																								{
+																									"classNode": {
+																										"tagName":      "li",
+																										"text":         "",
+																										"children":     [
+																											{
+																												"classNode": {
+																													"tagName":      "a",
+																													"text":         "Transcript",
+																													"children":     [
+																														{
+																															"classNode": {
+																																"tagName":      "span",
+																																"text":         "",
+																																"children":     [],
+																																"attributeMap": [
+																																	{"class": "icon icon-text"}
+																																]
+																															}
+																														}
+																													],
+																													"attributeMap": [
+																														{
+																															"href": "https://www.nato.int/cps/en/natohq/opinions_209984.htm"
+																														},
+																														{"title": "Speech"}
+																													]
+																												}
+																											}
+																										],
+																										"attributeMap": [
+																											{"class": "col colspan-m-6 colspan-s-12"}
+																										]
+																									}
+																								}
+																							],
+																							"attributeMap": [
+																								{"class": "row list list-inline list--light"}
+																							]
+																						}
+																					}
+																				],
+																				"attributeMap": [
+																					{"class": "overlay-desc"}
+																				]
+																			}
+																		}
+																	],
+																	"attributeMap": [
+																		{"class": "box-media box-media--stretched"}
+																	]
+																}
+															},
+															{
+																"classNode": {
+																	"tagName":      "div",
+																	"text":         "",
+																	"children":     [
+																		{
+																			"classNode": {
+																				"tagName":      "ul",
+																				"text":         "",
+																				"children":     [
+																					{
+																						"classNode": {
+																							"tagName":      "li",
+																							"text":         "",
+																							"children":     [
+																								{
+																									"classNode": {
+																										"tagName":      "a",
+																										"text":         "NATO Secretary General thanks Germany for contributions at critical time",
+																										"children":     [],
+																										"attributeMap": [
+																											{
+																												"title": "NATO Secretary General thanks Germany for contributions at critical time "
+																											},
+																											{"href": "https://www.nato.int/cps/en/natohq/news_209891.htm"}
+																										]
+																									}
+																								}
+																							],
+																							"attributeMap": []
+																						}
+																					},
+																					{
+																						"classNode": {
+																							"tagName":      "li",
+																							"text":         "",
+																							"children":     [
+																								{
+																									"classNode": {
+																										"tagName":      "a",
+																										"text":         "NATO Deputy Secretary General joins prayers for Ukraine",
+																										"children":     [],
+																										"attributeMap": [
+																											{
+																												"title": "NATO Deputy Secretary General joins prayers for Ukraine"
+																											},
+																											{"href": "https://www.nato.int/cps/en/natohq/news_209976.htm"}
+																										]
+																									}
+																								}
+																							],
+																							"attributeMap": []
+																						}
+																					},
+																					{
+																						"classNode": {
+																							"tagName":      "li",
+																							"text":         "",
+																							"children":     [
+																								{
+																									"classNode": {
+																										"tagName":      "a",
+																										"text":         "NATO Foreign Ministers end meetings in Bucharest with focus on China, more support for partners",
+																										"children":     [],
+																										"attributeMap": [
+																											{
+																												"title": "NATO Foreign Ministers end meetings in Bucharest with focus on China, more support for partners"
+																											},
+																											{"href": "https://www.nato.int/cps/en/natohq/news_209493.htm"}
+																										]
+																									}
+																								}
+																							],
+																							"attributeMap": []
+																						}
+																					},
+																					{
+																						"classNode": {
+																							"tagName":      "li",
+																							"text":         "",
+																							"children":     [
+																								{
+																									"classNode": {
+																										"tagName":      "a",
+																										"text":         "NATO Secretary General: \"we will not back down\" in support for Ukraine",
+																										"children":     [],
+																										"attributeMap": [
+																											{
+																												"title": "NATO Secretary General: &quot;we will not back down&quot; in support for Ukraine"
+																											},
+																											{"href": "https://www.nato.int/cps/en/natohq/news_209491.htm"}
+																										]
+																									}
+																								}
+																							],
+																							"attributeMap": []
+																						}
+																					},
+																					{
+																						"classNode": {
+																							"tagName":      "li",
+																							"text":         "",
+																							"children":     [
+																								{
+																									"classNode": {
+																										"tagName":      "a",
+																										"text":         "ALL NEWS",
+																										"children":     [
+																											{
+																												"classNode": {
+																													"tagName":      "span",
+																													"text":         "",
+																													"children":     [],
+																													"attributeMap": [
+																														{"class": "icon icon-arrow_link_double"}
+																													]
+																												}
+																											}
+																										],
+																										"attributeMap": [
+																											{"href": "https://www.nato.int/cps/en/natohq/news.htm"}
+																										]
+																									}
+																								}
+																							],
+																							"attributeMap": []
+																						}
+																					}
+																				],
+																				"attributeMap": [
+																					{"class": "list list-bordered"}
+																				]
+																			}
+																		}
+																	],
+																	"attributeMap": [
+																		{"class": "row teaser-wrapper"}
+																	]
+																}
+															}
+														],
+														"attributeMap": [
+															{"class": "inner"}
+														]
+													}
+												}
+											],
+											"attributeMap": [
+												{"class": "hero"}
+											]
+										}
+									}
+								],
+								"attributeMap": [
+									{"class": "inner"}
+								]
+							}
+						}
+					],
+					"attributeMap": [
+						{"class": "page"}
+					]
+				}
+			}
+		]
+	}
+}
