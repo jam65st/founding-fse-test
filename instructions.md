@@ -1,11 +1,17 @@
 # Funding Full Stack Engineer
+
 ## General Requirements:
+
 - Use any programming language of your choice.
 - Make reasonable assumptions if the question seems ambiguous.
+
 ## Test Duties:
+
 ### 1 BST
+
 Design a data structure for a binary search tree where each node has a key and a value,
-   and implement the following operations:
+and implement the following operations:
+
 - Search for a node, given as input a key, and output the value found on the
   searched node (or Null if such a node is not found)
 - Insert a node, given as input a (key, value) pair
@@ -16,7 +22,10 @@ Design a data structure for a binary search tree where each node has a key and a
   in the tree have distinct values)
 
 ### 2 Represent HTML
-Given an HTML document, write code to represent the contents of the HTML document (seen as a tree) in the following data structure. This syntax is Python. Modify the syntax appropriately if you’d like to work with a different programming language.
+
+Given an HTML document, write code to represent the contents of the HTML document (seen as a tree) in the following data
+structure. This syntax is Python. Modify the syntax appropriately if you’d like to work with a different programming
+language.
 <pre><small>class Node:
     tagName: Optional[str] # the name of the HTML tag represented in this node
     text: Optional[str] # the text within this HTML tag
@@ -27,29 +36,29 @@ tag
 </small></pre>
 
 ### 3 Integer Subset
-Write code to generate all subsets of a set of integers (assuming the size of the set is
-   reasonably small, say less than 20 elements). Note that you must enumerate all 2^n
-   subsets, with each subset listed exactly once.
+
+Write code to generate all subsets of a set of integers (assuming the size of the set is reasonably small, say less than
+20 elements). Note that you must enumerate all 2^n subsets, with each subset listed exactly once.
 
 ### 4 API
-Design and write REST API with express/nodejs to support CRUD operation to manage
-   a list of users, Assume the user is defined as following:
+
+Design and write REST API with express/nodejs to support CRUD operation to manage a list of users, Assume the user is
+defined as following:
 <pre><small>User = {
     Id: string
     Name: string
     Email: string
 }</small></pre>
-And we can manage the users in memory, if you can sketch the code to work with
-mongodb that would be a plus but not required.<br>
-The operations we want to support are add/remove user, get user by id, query user by
-name or email.
+And we can manage the users in memory, if you can sketch the code to work with mongodb that would be a plus but not
+required.<br> The operations we want to support are add/remove user, get user by id, query user by name or email.
 
 ### 5 Convert Numbers
+
 Implement these two functions: from_decimal, to_decimal. Then run the code (code in
-   main is already written, running which will print the results and check the correctness of
-   your code). Ensure you stick to the interfaces, simply implement the interfaces of these
-   functions. If Python is unfamiliar to you, write this in your programming language by
-   converting the interfaces and main to your programming language.
+main is already written, running which will print the results and check the correctness of
+your code). Ensure you stick to the interfaces, simply implement the interfaces of these
+functions. If Python is unfamiliar to you, write this in your programming language by
+converting the interfaces and main to your programming language.
 
 <pre><small><code lang="python">from typing import List, Sequence
 
