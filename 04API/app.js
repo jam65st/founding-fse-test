@@ -1,20 +1,24 @@
-var express = require('express');
-var path = require('path');
-var cookieParser = require('cookie-parser');
-var logger = require('morgan');
+/**
+ * # app.js
+ * @author: jetbrains
+ * @author: Jaime A. Mendez M. <jam65st@gmail.com> (updates 20221209)
+ */
 
-var indexRouter = require('./routes/index');
-var usersRouter = require('./routes/users');
+const express      = require( 'express' ),
+      path         = require( 'path' ),
+      cookieParser = require( 'cookie-parser' ),
+      logger       = require( 'morgan' ),
+      indexRouter  = require( './routes/index' ),
+      usersRouter  = require( './routes/users' ),
+      app          = express();
 
-var app = express();
+app.use( logger( 'dev' ) );
+app.use( express.json() );
+app.use( express.urlencoded( { extended: false } ) );
+app.use( cookieParser() );
+app.use( express.static( path.join( __dirname, 'public' ) ) );
 
-app.use(logger('dev'));
-app.use(express.json());
-app.use(express.urlencoded({ extended: false }));
-app.use(cookieParser());
-app.use(express.static(path.join(__dirname, 'public')));
-
-app.use('/', indexRouter);
-app.use('/users', usersRouter);
+app.use( '/', indexRouter );
+app.use( '/users', usersRouter );
 
 module.exports = app;

@@ -1,9 +1,25 @@
-var express = require('express');
-var router = express.Router();
+/**
+ * # routes/index.js
+ * @author: jetbrains
+ * @author: Jaime A. Mendez M. <jam65st@gmail.com> (updates 20221209)
+ */
+
+const express = require( 'express' ),
+      router  = express.Router();
 
 /* GET home page. */
-router.get('/', function(req, res, next) {
-  res.render('index', { title: 'Express' });
-});
+router.get( '/',
+            (
+		            request,
+		            response,
+		            next // Next Function
+            ) =>
+            {
+	            response.render(
+			            'index',
+			            { title: 'Express' }
+	            );
+            }
+);
 
 module.exports = router;
