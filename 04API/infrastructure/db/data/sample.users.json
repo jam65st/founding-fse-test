@@ -1,0 +1,152 @@
+{
+	"appTokens": {
+		"Wa45sRT67O0JHTY": {
+			"scope": "all",
+			"alias": "RT67O0"
+		},
+		"W4i5kRT66O0HTYJ": {
+			"scope": "write",
+			"alias": "RT66O0"
+		},
+		"Wn5p4RT65O0TYJH": {
+			"scope": "update",
+			"alias": "RT65O0"
+		},
+		"W2213RT6650YJHT": {
+			"scope": "delete",
+			"alias": "RT6650"
+		},
+		"WertsRT62O0JTHY": {
+			"scope": "read",
+			"alias": "RT62O0"
+		}
+	},
+	"users":     [
+		{
+			"Id":         "YTaUrVz",
+			"Name":       "Albert Wisconsin",
+			"Email":      "a.wisconsin@fakegemail.com",
+			"ValidEmail": true
+		},
+		{
+			"Id":         "YTdeNQ8",
+			"Name":       "John Doe",
+			"Email":      "j.doe@fakeu.edu",
+			"ValidEmail": true
+		},
+		{
+			"Id":         "YTdmOmQ",
+			"Name":       "Maverick Johnson",
+			"Email":      "m.johnson@fakearmy.mil",
+			"ValidEmail": true
+		},
+		{
+			"Id":         "YTfymsA",
+			"Name":       "David Steward",
+			"Email":      "d.steward@fakehotmail.com",
+			"ValidEmail": true
+		},
+		{
+			"Id":         "YTgUQnj",
+			"Name":       "Jack Donely",
+			"Email":      "j.donely@fakeaol.com",
+			"ValidEmail": true
+		},
+		{
+			"Id":         "YThGJ5K",
+			"Name":       "Francis Cott",
+			"Email":      "f.cott@fakestarmedia.com",
+			"ValidEmail": true
+		},
+		{
+			"Id":         "YTjeYyY",
+			"Name":       "Winona Scott",
+			"Email":      "w.scott@fakegmail.com",
+			"ValidEmail": true
+		},
+		{
+			"Id":         "YTkNRWE",
+			"Name":       "Darwin Garcia",
+			"Email":      "d.garcia@fakewillis.gov",
+			"ValidEmail": true
+		},
+		{
+			"Id":         "YTkijY5",
+			"Name":       "Enu Mowedo",
+			"Email":      "e.mowedo@fakebarton.us",
+			"ValidEmail": true
+		},
+		{
+			"Id":         "YTkxnHB",
+			"Name":       "Ali Al'Salim",
+			"Email":      "a.al-salim@fakearmy.mil",
+			"ValidEmail": true
+		},
+		{
+			"Id":         "YTlVb9R",
+			"Name":       "Jane Doe",
+			"Email":      "j.doe@fakehotmail.com",
+			"ValidEmail": true
+		},
+		{
+			"Id":         "YTm567I",
+			"Name":       "Ferdinand Marcois",
+			"Email":      "f.marcois@fakeaol.com",
+			"ValidEmail": true
+		},
+		{
+			"Id":         "YTpkOlu",
+			"Name":       "Anna Kuroskwa",
+			"Email":      "a.kuroskwa@fakehotmail.com",
+			"ValidEmail": true
+		},
+		{
+			"Id":         "YTqUhrK",
+			"Name":       "Lincoln Embraer",
+			"Email":      "l.embraer@fakegmail.com",
+			"ValidEmail": true
+		},
+		{
+			"Id":         "YTvjSlO",
+			"Name":       "Lady Sterling",
+			"Email":      "l.sterling@fakegemail.com",
+			"ValidEmail": true
+		},
+		{
+			"Id":         "YTwIqs9",
+			"Name":       "Johanna Abbad",
+			"Email":      "j.abbad@fakeu.edu",
+			"ValidEmail": true
+		},
+		{
+			"Id":         "YT0ySFl",
+			"Name":       "Mike Rogers",
+			"Email":      "m.rogers@fakearmy.mil",
+			"ValidEmail": true
+		},
+		{
+			"Id":         "YT28K66",
+			"Name":       "Will Smith",
+			"Email":      "w.smith@fakehotmail.com",
+			"ValidEmail": true
+		},
+		{
+			"Id":         "YT3P|wV",
+			"Name":       "Salma Hayek",
+			"Email":      "s.hayek@fakeme.com",
+			"ValidEmail": true
+		},
+		{
+			"Id":         "YT5NtLg",
+			"Name":       "Pablo Picasso",
+			"Email":      "p.picasso@fakehotmail.com",
+			"ValidEmail": true
+		},
+		{
+			"Id":         "YT5wVvn",
+			"Name":       "Edmund D'trojes",
+			"Email":      "e.d'trojes@fakegmail.com",
+			"ValidEmail": true
+		}
+	]
+}
