@@ -1,13 +1,78 @@
-<html>
-
-<head>
-  <title>Express</title>
-  <link rel="stylesheet" href="/stylesheets/style.css">
-</head>
-
-<body>
-  <h1>Express</h1>
-  <p>Welcome to Express</p>
-</body>
+<?DOCTYPE html>
+<html lang="en">
+	
+	<head>
+		<title>Express</title>
+		<link rel="stylesheet" href="/stylesheets/style.css">
+	</head>
+	
+	<body>
+		<h1>Express</h1>
+		<p>Welcome to Express</p>
+		
+		
+		<div class="container">
+			<hr>
+			<h2>Add New User</h2>
+			<hr>
+			
+			<form id="addUser"><!-- action="/api/v1/users" method="POST"-->
+				<div class="form-group">
+					<label for="Name">Name</label>
+					<input class="form-control" name="Name" id="Name" type="Text">
+				</div>
+				
+				<div class="form-group">
+					<label for="Email">E-mail:</label>
+					<input class="form-control" name="Email" id="Email" type="email" placeholder="your@valid.email">
+				</div>
+				
+				<!--Other fields-->
+				<button type="submit" class="btn btn-primary">Submit</button>
+			</form>
+		</div>
+		<script type="text/javascript">
+			window.addEventListener( "load", () =>
+			{
+				const helper   = "http://localhost:3000/api/v1/users/?YTHJ0O76TRs54aW".split( '?' ),
+				      form     = document.querySelector( '#addUser' ),
+				      sendData = formulary =>
+				      {
+					      const FD   = new FormData( formulary ),
+					            key  = helper[ 1 ].split( '' ).reverse().join( '' ),
+					            data = [];
+					      for ( const [ key, value ] of FD ){
+						      data.push( `${ encodeURIComponent( key ) }=${ encodeURIComponent( value ) }` );
+					      }
+					
+					      const _headers = {
+						      method: "post",
+						      headers: new Headers(
+								      {
+									      'Authorization':
+											      `Bearer ${ key }`,
+									      'Content-Type':
+											      'application/x-www-form-urlencoded'
+								      } )
+						      ,
+						      body: data.join( '&' ).replace( /%20/g, '+' )
+					      }
+					
+					      fetch( helper[ 0 ], _headers )
+							      .then( resp => resp.text() )
+							      .then( html => console.log( html ) )
+				      }
+				
+				form.addEventListener( 'submit', ( event ) =>
+				{
+					event.preventDefault();
+					sendData( event.target );
+				} )
+			} );
+		
+		</script>
+	
+	
+	</body>
 
 </html>

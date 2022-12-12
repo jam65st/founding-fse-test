@@ -4,8 +4,7 @@
  * @author: Jaime A. Mendez M. <jam65st@gmail.com> (updates 20221209)
  */
 
-const express = require( 'express' ),
-      router  = express.Router();
+const router = require( 'express' ).Router();
 
 /* GET users listing. */
 router.get( '/',
