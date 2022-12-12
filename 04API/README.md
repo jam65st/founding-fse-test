@@ -8,7 +8,7 @@ defined as following:
     Email: string
 }</small></pre>
 And we can manage the users in memory, if you can sketch the code to work with mongodb that would be a plus but not
-required.<br> The operations we want to support are add/remove user, get user by id, query user by name or email.
+required.<hr> The operations we want to support are add/remove user, get user by id, query user by name or email.
 
 ## Notes:
 
@@ -18,4 +18,20 @@ required.<br> The operations we want to support are add/remove user, get user by
 	- ./bin/www
 	- ./routes/index.js
 	- ./routes/users.js
-3. 
+3. Directories were moved in function of CLEAN
+	- application
+		- api
+		- bin
+		- routes
+	- domain
+		- models
+		- utils
+	- infrastructure
+		- data
+		- db
+	- public
+4. Sample data to populate database was created in *infrastructure/data/sample.data.json*
+5. API requires Authorization headers using **Bearer TOKEN** *(NonRFC)*, also each allowed token are registered in
+   DataBase such as: **appTokens** and each one has their own grants scope.
+	- ONLY Email confirmation doesn't requires token authorization.
+6. 
