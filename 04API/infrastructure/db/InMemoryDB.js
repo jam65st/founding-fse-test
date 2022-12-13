@@ -45,16 +45,17 @@ class InMemoryDB {
 	_msg(){ return `[DB] I have ${ this.#DB.users.length } users` }
 	
 	/**
-	 * # addUser
+	 * ## addUser
 	 * 1 DB Assume that data is Valid, model test mus be made first
 	 *
 	 * @param userData
+	 * @return {boolean}
 	 */
 	addUser( userData ){
-		let i = this.totalUsers;
-		this.#DB.users.push( userData )
+		let users = this.totalUsers;
+		this.#DB.users.push( userData );
 		console.log( this._msg() );
-		return i !== this.totalUsers;
+		return users !== this.totalUsers;
 	}
 	
 	/**
@@ -67,13 +68,49 @@ class InMemoryDB {
 	get newUserID(){ return hash64.defaultEncoded() }
 	
 	/**
+	 *
+	 * @param id {number}
+	 * @return {boolean}
+	 */
+	removeUser( id = -1 ){
+		
+		let users = this.totalUsers,
+		    index = this.#getUserIdIndex( id );
+		
+		console.log( index, users, id, this.#DB.users[ index ] );
+		
+		this.#DB.users = [
+			...this.#DB.users.slice( 0, index ),
+			...this.#DB.users.slice( index + 1 )
+		];
+		
+		/*
+		 if ( index === 0 ) this.#DB.users = [ ...this.#DB.users.slice( 1 ) ]
+		 if ( index === users - 1 ) this.#DB.users = [ ...this.#DB.users.slice( 0, index - 1 ) ]
+		 if ( index > 0 && index < users - 1 ) this.#DB.users = [
+		 this.#DB.users.slice( 0, index ),
+		 ...this.#DB.users.slice( index + 1 )
+		 ];*/
+		
+		
+		console.log( this._msg() );
+		console.table( this.#DB.users )
+		return users !== this.totalUsers;
+	}
+	
+	#getUserIdIndex( id ){
+		for ( let i = 0; i < this.#DB.users.length; i++ ) if ( this.#DB.users[ i ].Id === id ) return i;
+		return -1;
+	}
+	
+	/**
 	 * returns the number of all users in DB
 	 * @return {number}
 	 */
 	get totalUsers(){ return this.#DB.users.length }
 	
 	/**
-	 * # verifyToken
+	 * ## verifyToken
 	 * Review if a token is valid and return their grants
 	 *
 	 * @param token
@@ -84,10 +121,33 @@ class InMemoryDB {
 		return test ? test : false;
 	}
 	
+	/**
+	 * ## isUniqueUserID
+	 * Uses #isUniqueUserField to find duplicates or not in the field **Id**
+	 *
+	 * @param ID
+	 * @return {boolean}
+	 */
 	isUniqueUserID( ID ){ return this.#isUniqueUserField( 'Id', ID ) }
 	
+	/**
+	 * ## isUniqueUserEmail
+	 * Uses #isUniqueUserField to find duplicates or not in the field **Email**
+	 *
+	 * @param email
+	 * @return {boolean}
+	 */
 	isUniqueUserEmail( email ){ return this.#isUniqueUserField( 'Email', email ) }
 	
+	/**
+	 * ## #isUniqueUserField
+	 * Search any iteration of the value in users collection from database
+	 *
+	 * @param field
+	 * @param value
+	 * @return {boolean}
+	 * @private
+	 */
 	#isUniqueUserField( field, value ){
 		for ( let i = 0; i < this.#DB.users.length; i++ ){
 			if ( this.#DB.users[ i ][ field ] === value ) return false;
@@ -95,14 +155,19 @@ class InMemoryDB {
 		return true;
 	}
 	
-	
+	/**
+	 * ## verifyUserEmailData
+	 *
+	 * @param knewData {Id: string, Email:String} search parameters
+	 * @return {number} current status of verification
+	 */
 	verifyUserEmailData( knewData ){
 		for ( let i = 0; i < this.#DB.users.length; i++ ){
 			if ( this.#DB.users[ i ].Id === knewData.Id ||
 					this.#DB.users[ i ].Email === knewData.Email
 			){
-				if ( this.#DB.users[ i ].Id !== knewData.Id ) return 102
-				if ( this.#DB.users[ i ].Email !== knewData.Email ) return 103
+				if ( this.#DB.users[ i ].Id !== knewData.Id ) return 103
+				if ( this.#DB.users[ i ].Email !== knewData.Email ) return 104
 				if ( this.#DB.users[ i ].Id === knewData.Id &&
 						this.#DB.users[ i ].Email === knewData.Email ){
 					if ( this.#DB.users[ i ].ValidEmail === true ) return 101
@@ -111,7 +176,7 @@ class InMemoryDB {
 				}
 			}
 		}
-		return 103;
+		return 105;
 	}
 }
 

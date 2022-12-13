@@ -3,11 +3,10 @@ const InMemoryDB     = require( "../../../../infrastructure/db/InMemoryDB" ),
       { userSchema } = require( '../../../../domain/models/users' ),
       APIUtils       = require( "./validators" );
 
-const Grants        = {
+const Grants = {
 	createNewUser: [ 'all', 'write' ],
 	removeUser: [ 'all', 'write', 'delete' ]
 }
-const TestingFields = {}
 
 /**
  * ## [ addUserToDB ]: CreateNewUser
@@ -34,8 +33,9 @@ const CreateNewUser = ( request, response, next ) =>
 	) [ validToken, tokenError ] = [ false, tokenError + ' & grants' ];
 	
 	// Reject token
+	// Notice AddUser102 Invalid Token
 	if ( !validToken ) response.status( 403 ) // 102 Invalid Token
-	                           .json( makeResponses( 'addUser', 102, `${ APIUtils.ADD_USER_NOTICES.AddUser102 }: ${ tokenError }` ) );//
+	                           .json( makeResponses( 'addUser', 102, `${ APIUtils.ADD_USER_NOTICES.AddUser102 }: ${ tokenError }` ) );
 	
 	// Continue
 	if ( validToken ){
@@ -93,29 +93,87 @@ const CreateNewUser = ( request, response, next ) =>
 			);
 	}
 	
+	// NextFunction implementation
 	if ( validToken && userToAdd[ 0 ] && Id && Email && next ) next();
 }
 
+/**
+ * ## [removeUserFromDB]: RemoveUser
+ *
+ * @param request {...}
+ * @param response: Response<ResBody,Locals>
+ * @param next: NextFunction
+ * @constructor
+ */
 const RemoveUser = ( request, response, next ) =>
 {
 	// Validate Bearer Token Authorization
-	const validToken = testToken( request ),
-	      tokenError = 'token';
+	const validToken      = APIUtils.TokenValidator( request, DataBase ),
+	      tokenError      = 'token',
+	      userId          = request.query.Id || request.params.Id;
+	let [ result, exist ] = false;
 	
 	// Test Token grants
 	if ( validToken &&
-			Grants.createNewUser
+			Grants.removeUser
 			      .indexOf( validToken.scope ) === -1
 	) [ validToken, tokenError ] = [ false, tokenError + ' & grants' ];
 	
 	// Reject token
-	if ( !validToken ) response.status( 403 ).send( `Invalid Bearer Token [value|scope] ${ tokenError }` );
+	// Notice RMUser102 Invalid Token
+	if ( !validToken ) response.status( 403 ) // 102 Invalid Token
+	                           .json(
+			                           makeResponses(
+					                           'removeUser',
+					                           102,
+					                           `${ APIUtils.REMOVE_USER_NOTICES.RMUser102 }: ${ tokenError }`
+			                           )
+	                           );
+	
+	// Verify if user to remove is in DataBase
+	if ( validToken ) exist = !DataBase.isUniqueUserID( userId );
+	
+	// Notice RMUser103 NotUser
+	if ( validToken && !exist ) response.status( 403 )
+	                                    .json(
+			                                    makeResponses(
+					                                    'removeUser',
+					                                    103,
+					                                    APIUtils.REMOVE_USER_NOTICES.RMUser103
+			                                    )
+	                                    );
+	
+	// Remove User from DataBase
+	if ( validToken && exist ) result = DataBase.removeUser( userId )
+	
+	// Notice RMUser200 ERROR | DataBase do not respond
+	if ( validToken && exists && !result )
+		response.status( 403 )
+		        .json(
+				        makeResponses(
+						        'removeUser',
+						        200,
+						        APIUtils.REMOVE_USER_NOTICES.RMUser200
+				        )
+		        );
+	
+	// Notice RMUser100 Success!!!
+	if ( validToken && exist && result )
+		response.json(
+				makeResponses(
+						'removeUser',
+						100,
+						APIUtils.REMOVE_USER_NOTICES.RMUser100 )
+		);
+	
+	// NextFunction implementation
+	if ( validToken && exist && result && next ) next();
 }
 
 const GetUserByID = ( request, response, next ) =>
 {
 	// Validate Bearer Token Authorization
-	const validToken = testToken( request ),
+	const validToken = APIUtils.TokenValidator( request, DataBase ),
 	      tokenError = 'token';
 	
 	// Test Token grants
@@ -125,13 +183,17 @@ const GetUserByID = ( request, response, next ) =>
 	) [ validToken, tokenError ] = [ false, tokenError + ' & grants' ];
 	
 	// Reject token
-	if ( !validToken ) response.status( 403 ).send( `Invalid Bearer Token [value|scope] ${ tokenError }` );
+	// Notice AddUser102 Invalid Token
+	if ( !validToken ) response.status( 403 ) // 102 Invalid Token
+	                           .json( makeResponses( 'addUser', 102, `${ APIUtils.ADD_USER_NOTICES.AddUser102 }
+: ${ tokenError }
+	` ) );
 }
 
 const GetUserByName = ( request, response, next ) =>
 {
 	// Validate Bearer Token Authorization
-	const validToken = testToken( request ),
+	const validToken = APIUtils.TokenValidator( request, DataBase ),
 	      tokenError = 'token';
 	
 	// Test Token grants
@@ -141,13 +203,17 @@ const GetUserByName = ( request, response, next ) =>
 	) [ validToken, tokenError ] = [ false, tokenError + ' & grants' ];
 	
 	// Reject token
-	if ( !validToken ) response.status( 403 ).send( `Invalid Bearer Token [value|scope] ${ tokenError }` );
+	// Notice AddUser102 Invalid Token
+	if ( !validToken ) response.status( 403 ) // 102 Invalid Token
+	                           .json( makeResponses( 'addUser', 102, `${ APIUtils.ADD_USER_NOTICES.AddUser102 }
+: ${ tokenError }
+	` ) );
 }
 
 const GetUserByEmail = ( request, response, next ) =>
 {
 	// Validate Bearer Token Authorization
-	const validToken = testToken( request ),
+	const validToken = APIUtils.TokenValidator( request, DataBase ),
 	      tokenError = 'token';
 	
 	// Test Token grants
@@ -157,9 +223,30 @@ const GetUserByEmail = ( request, response, next ) =>
 	) [ validToken, tokenError ] = [ false, tokenError + ' & grants' ];
 	
 	// Reject token
-	if ( !validToken ) response.status( 403 ).send( `Invalid Bearer Token [value|scope] ${ tokenError }` );
+	if ( !validToken )
+		response.status( 403 )
+		        .send(
+				        makeResponses(
+						        'addUser',
+						        102,
+						        `${ APIUtils.GET_USER_NOTICES.AddUser102 } : ${ tokenError }`
+				        )
+		        );
+	
+	console.log( 'params', request.params )
+	console.log( 'body', request.body )
+	console.log( 'query', request.query )
+	console.log( 'host', request.header )
 }
 
+/**
+ * ##[ConfirmUserEmailToDB] ConfirmUserEmail
+ *
+ * @param request {...}
+ * @param response: Response<ResBody,Locals>
+ * @param next: NextFunction
+ * @constructor
+ */
 const ConfirmUserEmail = ( request, response, next ) =>
 {
 	console.log( 'params', request.params )
@@ -175,7 +262,13 @@ const ConfirmUserEmail = ( request, response, next ) =>
 		                                             Id: request.params.Id,
 		                                             Email: request.query.Email
 	                                             } );
-	response.json( makeResponses( 'ConfirmUserEmail', verify, `${ APIUtils.EMAIL_VERIFICATION[ 'Email' + verify ] }` ) );
+	response.json(
+			makeResponses(
+					'confirmUserEmail',
+					verify,
+					`${ APIUtils.EMAIL_VERIFICATION[ 'Email' + verify ] }`
+			)
+	);
 }
 
 /**

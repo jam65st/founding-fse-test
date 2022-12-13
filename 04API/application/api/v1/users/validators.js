@@ -103,12 +103,25 @@ const AddUserNotices     = {
 const VerifyEmailNotices = {
 	'Email100': 'Email has been Validated',
 	'Email101': 'Email was be verified yet',
-	'Email102': 'Email Inconsistent',
-	'Email103': 'User Inconsistent',
-	'Email104': 'Data provided is Invalid'
+	'Email103': 'Email Inconsistent',
+	'Email102': 'User Inconsistent',
+	'Email105': 'Data provided is Invalid'
+}
+const RemoveUserNotices  = {
+	'RMUser100': 'User has been removed',
+	'RMUser102': 'Invalid Bearer Token [value|scope]',
+	'RMUser103': 'Do not exist user with the provided ID',
+	'RMUser200': 'Unknown ERROR, contact your administrator.'
+}
+const GetUserNotices     = {
+	'User100': 'User has been recovered',
+	'User102': 'Invalid Bearer Token [value|scope] ',
+	'User110': ''
 }
 
-module.exports.TokenValidator     = TokenValidator;
-module.exports.SchemaValidator    = SchemaValidator;
-module.exports.ADD_USER_NOTICES   = AddUserNotices;
-module.exports.EMAIL_VERIFICATION = VerifyEmailNotices;
+module.exports.TokenValidator      = TokenValidator;
+module.exports.SchemaValidator     = SchemaValidator;
+module.exports.ADD_USER_NOTICES    = AddUserNotices;
+module.exports.GET_USER_NOTICES    = GetUserNotices;
+module.exports.REMOVE_USER_NOTICES = RemoveUserNotices;
+module.exports.EMAIL_VERIFICATION  = VerifyEmailNotices;

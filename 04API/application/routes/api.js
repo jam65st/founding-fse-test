@@ -21,14 +21,6 @@ router.post( usersPath,
 		             next // Next Function
              ) => addUserToDB( request, response, next ) );
 
-/* REMOVE: User */
-router.delete( usersPath,
-               (
-		               request,
-		               response,
-		               next // Next Function
-               ) => removeUserFromDB( request, response, next ) );
-
 /* VERIFY; USER email */
 router.get( `${ usersPath }/verify/:Id`,
             (
@@ -36,5 +28,13 @@ router.get( `${ usersPath }/verify/:Id`,
 		            response,
 		            next // Next Function
             ) => confirmUserEmailToDB( request, response, next ) );
+
+/* REMOVE: User */
+router.delete( usersPath,
+               (
+		               request,
+		               response,
+		               next // Next Function
+               ) => removeUserFromDB( request, response, next ) );
 
 module.exports = router;
