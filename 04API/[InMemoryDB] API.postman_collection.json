@@ -1,0 +1,211 @@
+{
+	"info": {
+		"_postman_id": "37dfae77-8428-40d4-8531-602ae662eec8",
+		"name": "[InMemoryDB] API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "17262610"
+	},
+	"item": [
+		{
+			"name": "AddUserToDB",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Right response\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"pm.test(\"BAD response\", function () {",
+							"    pm.response.to.have.status(403);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "Wa45sRT67O0JHTY",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "Name",
+							"value": "Jaime",
+							"type": "text"
+						},
+						{
+							"key": "Email",
+							"value": "jam65st@gmail.com",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/v1/users",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"v1",
+						"users"
+					],
+					"query": [
+						{
+							"key": "User",
+							"value": "jam65st",
+							"disabled": true
+						},
+						{
+							"key": "Name",
+							"value": "Jaime Mendez",
+							"disabled": true
+						},
+						{
+							"key": "Email",
+							"value": "jam65st@gmail.com",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "RemoveUserFromDB",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "Wa45sRT67O0JHTY",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "Name",
+							"value": "Drako Rosa",
+							"type": "text",
+							"disabled": true
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/v1/users?Id=YTm567I",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"v1",
+						"users"
+					],
+					"query": [
+						{
+							"key": "Id",
+							"value": "YTdeNQ8",
+							"disabled": true
+						},
+						{
+							"key": "Id",
+							"value": "YTaUrVz",
+							"disabled": true
+						},
+						{
+							"key": "Id",
+							"value": "YT5wVvn",
+							"disabled": true
+						},
+						{
+							"key": "Id",
+							"value": "YTm567I"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ConfirmUserEmailToDB",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/api/v1/users/verify/YTaUrVz?Email=a.wisconsin@fakegemail.com",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"v1",
+						"users",
+						"verify",
+						"YTaUrVz"
+					],
+					"query": [
+						{
+							"key": "Email",
+							"value": "a.wisconsin@fakegemail.com"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetUserFromDB",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/api/v1/users",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"v1",
+						"users"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

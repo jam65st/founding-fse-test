@@ -103,6 +103,8 @@ Database includes documented methods to respond at middleware requests.
 
 # Users API
 
+The file `./[InMemoryDB] API.postman_collection.json` was added to help a review of this work.
+
 ## Add User to DataBase <small>(AddUserToDB)</small>
 
 **[ POST ] /users**<br>
