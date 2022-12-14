@@ -1,4 +1,7 @@
 {
+	"__main":    {
+		"firstIndex": "YTaUrVz"
+	},
 	"appTokens": {
 		"Wa45sRT67O0JHTY": {
 			"scope": "all",
@@ -32,6 +35,12 @@
 			"Id":         "YTdeNQ8",
 			"Name":       "John Doe",
 			"Email":      "j.doe@fakeu.edu",
+			"ValidEmail": true
+		},
+		{
+			"Id":         "YTgUQpj",
+			"Name":       "Francis Morris",
+			"Email":      "f.morris@fake.drill.org",
 			"ValidEmail": true
 		},
 		{
