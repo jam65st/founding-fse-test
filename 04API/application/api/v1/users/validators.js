@@ -60,8 +60,6 @@ const SchemaValidator = ( data, schema, add = {} ) =>
 	
 	// validate
 	for ( item in schema ){
-		// console.log( valid, item, result[ item ], typeof result[ item ] );
-		
 		// required first
 		if ( schema[ item ].required && result[ item ] === undefined ) return [ false, `Requires ${ item }` ]
 		
@@ -91,35 +89,77 @@ const SchemaValidator = ( data, schema, add = {} ) =>
 	return [ result, unique ];
 }
 
-// NOTIFY MESSAGES
+/**
+ * ## RequestValidator
+ * Verify if conditions are fitted to allow a response
+ *
+ * @param query {object} such as got from request query
+ * @param conditions type of information to obtain
+ * @return {boolean|*[]}
+ * @constructor
+ */
+const RequestValidator = ( query, conditions ) =>
+{
+	let KEY = [];
+	
+	const methods = {
+		length: ( obj, min, max = null ) =>
+		{
+			max       = max === null || isNaN( max ) || max < min ? min : max;
+			let index = 0;
+			for ( let data in obj ){
+				KEY.push( data );
+				index++;
+			}
+			return [ index >= min && index <= max, index ];
+		},
+		indexOf: ( _r, arr, str ) => [ arr.indexOf( str ) > -1, arr.indexOf( str ), str ]
+		// If requires another kind of validations add here
+		//
+	}
+	
+	let result = true, it;
+	
+	for ( let kind in conditions ){
+		it = methods[ kind ]( query, conditions[ kind ], KEY.toString() );
+		if ( !it[ 0 ] ) return [ ...it, kind ]
+	}
+	
+	return result;
+}
+
+// NOTIFICATION MESSAGES
 const AddUserNotices     = {
-	'AddUser100': 'Please verify your email at:',
-	'AddUser102': 'Invalid Bearer Token [value|scope] ',
-	'AddUser103': 'Invalid User, email was registered yet',
-	'AddUser104': 'Invalid User, Do not complains DataSchema',
-	'AddUser130': 'Invalid UserID is registered yet, contact your administrator',
-	'AddUser200': 'Unknown ERROR, contact your administrator.'
+	AddUser100: 'Please verify your email at:',
+	AddUser102: 'Invalid Bearer Token [value|scope] ',
+	AddUser103: 'Invalid User, email was registered yet',
+	AddUser104: 'Invalid User, Do not complains DataSchema',
+	AddUser130: 'Invalid UserID is registered yet, contact your administrator',
+	AddUser200: 'Unknown ERROR, contact your administrator.'
 }
 const VerifyEmailNotices = {
-	'Email100': 'Email has been Validated',
-	'Email101': 'Email was be verified yet',
-	'Email103': 'Email Inconsistent',
-	'Email102': 'User Inconsistent',
-	'Email105': 'Data provided is Invalid'
+	Email100: 'Email has been Validated',
+	Email101: 'Email was be verified yet',
+	Email103: 'Email Inconsistent',
+	Email102: 'User Inconsistent',
+	Email105: 'Data provided is Invalid'
 }
 const RemoveUserNotices  = {
-	'RMUser100': 'User has been removed',
-	'RMUser102': 'Invalid Bearer Token [value|scope]',
-	'RMUser103': 'Do not exist user with the provided ID',
-	'RMUser200': 'Unknown ERROR, contact your administrator.'
+	RMUser100: 'User has been removed',
+	RMUser102: 'Invalid Bearer Token [value|scope]',
+	RMUser103: 'Do not exist user with the provided ID',
+	RMUser200: 'Unknown ERROR, contact your administrator.'
 }
 const GetUserNotices     = {
-	'User100': 'User has been recovered',
-	'User102': 'Invalid Bearer Token [value|scope] ',
-	'User110': ''
+	GetUser100: 'User has been recovered',
+	GetUser102: 'Invalid Bearer Token [value|scope] ',
+	GetUser103: 'Invalid Arguments, expected 1 and got:',
+	GetUser104: 'Invalid Key, got:',
+	GetUser110: 'No one has registered wit the provided data'
 }
 
 module.exports.TokenValidator      = TokenValidator;
+module.exports.RequestValidator    = RequestValidator;
 module.exports.SchemaValidator     = SchemaValidator;
 module.exports.ADD_USER_NOTICES    = AddUserNotices;
 module.exports.GET_USER_NOTICES    = GetUserNotices;
