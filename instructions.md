@@ -26,14 +26,17 @@ and implement the following operations:
 Given an HTML document, write code to represent the contents of the HTML document (seen as a tree) in the following data
 structure. This syntax is Python. Modify the syntax appropriately if you’d like to work with a different programming
 language.
-<pre><small>class Node:
-    tagName: Optional[str] # the name of the HTML tag represented in this node
-    text: Optional[str] # the text within this HTML tag
-    children: List[‘Node'] # the list of nodes immediately within (children of) this HTML tag
-    attributeMap: Dict[str, str] # dictionary of (key, value) pairs of attributes in this HTML
-tag
-    parent: Optional['Node'] # parent node for this HTML tag
-</small></pre>
+
+```Python
+class Node:
+    tagName: Optional[str]  # the name of the HTML tag represented in this node
+    text: Optional[str]  # the text within this HTML tag
+    children: List[‘Node
+    '] # the list of nodes immediately within (children of) this HTML tag
+    attributeMap: Dict[str, str]  # dictionary of (key, value) pairs of attributes in this HTML
+    tag
+    parent: Optional['Node']  # parent node for this HTML tag
+```
 
 ### 3 Integer Subset
 
@@ -44,11 +47,15 @@ Write code to generate all subsets of a set of integers (assuming the size of th
 
 Design and write REST API with express/nodejs to support CRUD operation to manage a list of users, Assume the user is
 defined as following:
-<pre><small>User = {
-    Id: string
-    Name: string
-    Email: string
-}</small></pre>
+
+```javascript
+User = {
+	Id: string,
+	Name: string,
+	Email: string
+}
+```
+
 And we can manage the users in memory, if you can sketch the code to work with mongodb that would be a plus but not
 required.<br> The operations we want to support are add/remove user, get user by id, query user by name or email.
 
@@ -60,7 +67,8 @@ your code). Ensure you stick to the interfaces, simply implement the interfaces 
 functions. If Python is unfamiliar to you, write this in your programming language by
 converting the interfaces and main to your programming language.
 
-<pre><small><code lang="python">from typing import List, Sequence
+````Python
+from typing import List, Sequence
 
 def to_decimal(base: int, base_number: Sequence[int]) -> int:
     '''
@@ -84,4 +92,4 @@ if __name__ == '__main__':
     print(f"Recovered number in base {base:d} is {base_number_recover}")
     correct: bool = base_number == base_number_recover
     print(f"Is the code working correctly? {correct}")
-</code></small></pre>
+```
